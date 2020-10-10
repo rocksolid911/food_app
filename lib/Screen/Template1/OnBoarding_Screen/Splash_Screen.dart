@@ -8,7 +8,9 @@ import 'package:food_template/Screen/Template1/Login_Screen/SignIn_Screen.dart';
 //import 'Screen/Template2/Bottom_Nav_Bar/BottomNavigationBar.dart';
 //import 'Screen/Template4/SplashScreen.dart';
 
-import 'onBoarding_Screen.dart';
+//import 'onBoarding_Screen.dart';
+//skipping the intro pages
+import 'Choose_Login.dart';
 
 class SplashScreenTemplate1 extends StatelessWidget {
   @override
@@ -48,7 +50,7 @@ class _SplashScreenTemplate1ScreenState
   @override
   void _Navigator() {
     Navigator.of(context).pushReplacement(PageRouteBuilder(
-        pageBuilder: (_, __, ___) => OnboardingScreen(),
+        pageBuilder: (_, __, ___) => chooseLogin(),
         transitionDuration: Duration(milliseconds: 2000),
         transitionsBuilder: (_, Animation<double> animation, __, Widget child) {
           return Opacity(
