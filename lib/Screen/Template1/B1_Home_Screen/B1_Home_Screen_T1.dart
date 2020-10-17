@@ -80,6 +80,7 @@ class _HomeScreenT1State extends State<HomeScreenT1> {
                     image: DecorationImage(
                         image: CachedNetworkImageProvider(
                           "https://www.morpht.com/sites/morpht/files/styles/landscape/public/dalibor-matura_1.jpg?itok=gxCAhwAV",
+                          // ignore: deprecated_member_use
                           errorListener: () => new Icon(Icons.error),
                         ),
                         fit: BoxFit.cover),

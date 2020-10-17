@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'Confirm_OTP_Screen.dart';
 import 'Signup_Screen.dart';
 
+// ignore: camel_case_types
 class signinTemplate1 extends StatefulWidget {
   signinTemplate1({Key key}) : super(key: key);
 
@@ -9,6 +10,7 @@ class signinTemplate1 extends StatefulWidget {
   _signinTemplate1State createState() => _signinTemplate1State();
 }
 
+// ignore: camel_case_types
 class _signinTemplate1State extends State<signinTemplate1> {
   @override
   Widget build(BuildContext context) {
@@ -21,10 +23,11 @@ class _signinTemplate1State extends State<signinTemplate1> {
               height: _height,
               width: double.infinity,
               decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(
-                          "assets/Template1/image/loginBackground.jpeg"),
-                      fit: BoxFit.cover)),
+                image: DecorationImage(
+                    image: AssetImage(
+                        "assets/Template1/image/loginBackground.jpeg"),
+                    fit: BoxFit.cover),
+              ),
             ),
             Container(
               height: _height,
