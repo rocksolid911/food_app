@@ -159,6 +159,7 @@ class _chooseLoginState extends State<chooseLogin>
                                             tapLogin = 1;
                                           });
                                           _Playanimation();
+
                                           return tapLogin;
                                         },
                                         child: ButtonCustom(
@@ -191,9 +192,13 @@ class _chooseLoginState extends State<chooseLogin>
                                       return tapSignup;
                                     },
                                     child: ButtonCustom(
-                                      txt: "Connect with Faceboock",
-                                      gradient1: Colors.blue,
-                                      gradient2: Colors.blueAccent,
+                                      image: Image(
+                                        image: AssetImage(
+                                            'assets/Template1/image/googlelogo.png'),
+                                      ),
+                                      txt: "Connect with Google",
+                                      gradient1: Colors.white60,
+                                      gradient2: Colors.white,
                                       border: Colors.transparent,
                                     ),
                                   ),
@@ -223,8 +228,10 @@ class ButtonCustom extends StatelessWidget {
   Color gradient1;
   Color gradient2;
   Color border;
+  Image image;
 
-  ButtonCustom({this.txt, this.gradient1, this.gradient2, this.border});
+  ButtonCustom(
+      {this.txt, this.gradient1, this.gradient2, this.border, this.image});
 
   Widget build(BuildContext context) {
     return Material(
@@ -233,32 +240,62 @@ class ButtonCustom extends StatelessWidget {
         splashColor: Colors.white,
         child: LayoutBuilder(builder: (context, constraint) {
           return Padding(
-            padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-            child: Container(
-              height: 52.0,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: border,
+              padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+              child: Container(
+                height: 52.0,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: border,
+                  ),
+                  borderRadius: BorderRadius.circular(80.0),
+                  gradient: LinearGradient(colors: [
+                    gradient1,
+                    gradient2,
+                  ]),
                 ),
-                borderRadius: BorderRadius.circular(80.0),
-                gradient: LinearGradient(colors: [
-                  gradient1,
-                  gradient2,
-                ]),
-              ),
-              child: Center(
-                  child: Text(
-                txt,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 17.0,
-                    fontWeight: FontWeight.w300,
-                    fontFamily: "Sofia",
-                    letterSpacing: 0.9),
-              )),
-            ),
-          );
+                child: Center(
+                  child: image == null
+                      ? Text(
+                          txt,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 17.0,
+                              fontWeight: FontWeight.w300,
+                              fontFamily: "Sofia",
+                              letterSpacing: 0.9),
+                        )
+                      : Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left:12.0),
+                              child: Text(
+                                txt,
+                                style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 17.0,
+                                    fontWeight: FontWeight.w300,
+                                    fontFamily: "Sofia",
+                                    letterSpacing: 0.9),
+                              ),
+                            ),
+                            ClipRect(
+                              child: SizedBox(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left:28.0),
+                                  child: Image(
+                                    colorBlendMode: BlendMode.color,
+                                    fit: BoxFit.contain,
+                                    image: AssetImage(
+                                        'assets/Template1/image/googlelogo.png'),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                ),
+              ));
         }),
       ),
     );

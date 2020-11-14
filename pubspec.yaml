@@ -20,6 +20,8 @@ dependencies:
   flutter:
     sdk: flutter
   firebase_core: "0.5.0"
+  firebase_auth: ^0.18.0+1
+  google_sign_in: ^4.5.3
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -134,6 +136,7 @@ flutter:
     - assets/Template1/image/profileBackground.png
     - assets/Template1/image/backgroundProfile.png
     - assets/Template1/image/backgroundLine.png
+    - assets/Template1/image/googlelogo.png
     - assets/Template1/banner/1.jpg
     - assets/Template1/banner/2.jpg
     - assets/Template1/banner/3.jpg

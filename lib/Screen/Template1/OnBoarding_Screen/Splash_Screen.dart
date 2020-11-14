@@ -2,16 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-//import 'package:food_template/Screen/Template1/B5_Profile_Screen/List_Profile_Screen/Another_Template.dart';
-import 'package:food_template/Screen/Template1/Bottom_Nav_Bar/bottomNavBar.dart';
-import 'package:food_template/Screen/Template1/Login_Screen/SignIn_Screen.dart';
-//import 'Screen/Template2/Bottom_Nav_Bar/BottomNavigationBar.dart';
-//import 'Screen/Template4/SplashScreen.dart';
-
-//import 'onBoarding_Screen.dart';
-//skipping the intro pages
 import 'Choose_Login.dart';
-
 class SplashScreenTemplate1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
