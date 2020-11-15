@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_template/Screen/Template1/Login_Screen/SignIn_Screen.dart';
-
+import 'lib/services/';
 class chooseLogin extends StatefulWidget {
   chooseLogin({Key key}) : super(key: key);
 
@@ -186,6 +186,7 @@ class _chooseLoginState extends State<chooseLogin>
                                     splashColor: Colors.white,
                                     onTap: () {
                                       setState(() {
+                                        signinWithGoogle
                                         tapSignup = 1;
                                       });
                                       _Playanimation();
