@@ -16,7 +16,8 @@ Future<String> signInWithGoogle() async {
     accessToken: googleSignInAuthentication.accessToken,
     idToken: googleSignInAuthentication.idToken,
   );
-  final UserCredential authResult = await _auth.signInWithCredential(credential);
+  final UserCredential authResult =
+      await _auth.signInWithCredential(credential);
   final User user = authResult.user;
 
   if (user != null) {
@@ -34,8 +35,8 @@ Future<String> signInWithGoogle() async {
   return null;
 }
 
+void signOutGoogle() async {
+  await googleSignIn.signOut();
 
-
-void signOutGoogle() async {  await googleSignIn.signOut();
-
-print("User Signed Out");}
+  print("User Signed Out");
+}

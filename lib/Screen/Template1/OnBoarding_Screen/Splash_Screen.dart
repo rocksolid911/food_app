@@ -3,7 +3,12 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'Choose_Login.dart';
-class SplashScreenTemplate1 extends StatelessWidget {
+class SplashScreenTemplate1 extends StatefulWidget {
+  @override
+  _SplashScreenTemplate1State createState() => _SplashScreenTemplate1State();
+}
+
+class _SplashScreenTemplate1State extends State<SplashScreenTemplate1> {
   @override
   Widget build(BuildContext context) {
     ///Set color status bar

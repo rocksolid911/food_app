@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_template/Screen/Template1/Login_Screen/SignIn_Screen.dart';
-import 'lib/services/';
+import '.././../../services/signin_services.dart';
 class chooseLogin extends StatefulWidget {
   chooseLogin({Key key}) : super(key: key);
 
@@ -185,8 +185,8 @@ class _chooseLoginState extends State<chooseLogin>
                                   child: InkWell(
                                     splashColor: Colors.white,
                                     onTap: () {
+                                     // signInWithGoogle();
                                       setState(() {
-                                        signinWithGoogle
                                         tapSignup = 1;
                                       });
                                       _Playanimation();
@@ -338,11 +338,15 @@ class AnimationSplashLogin extends StatefulWidget {
 class _AnimationSplashLoginState extends State<AnimationSplashLogin> {
   @override
   Widget build(BuildContext context) {
-    widget.animationController.addListener(() {
+    widget.animationController.addListener(() async {
       if (widget.animation.isCompleted) {
-        Navigator.of(context).pushReplacement(MaterialPageRoute(
-            builder: (BuildContext context) => new signinTemplate1()));
-        //hello
+       var user = await signInWithGoogle();
+       if(user!=null){
+         Navigator.of(context).pushReplacement(MaterialPageRoute(
+             builder: (BuildContext context) => new signinTemplate1()));
+         //hello
+       }
+
       }
     });
     return AnimatedBuilder(
@@ -387,8 +391,10 @@ class AnimationSplashSignup extends StatefulWidget {
 class _AnimationSplashSignupState extends State<AnimationSplashSignup> {
   @override
   Widget build(BuildContext context) {
+
     widget.animationController.addListener(() {
       if (widget.animation.isCompleted) {
+
         Navigator.of(context).pushReplacement(MaterialPageRoute(
             builder: (BuildContext context) => new signinTemplate1()));
       }
