@@ -7,6 +7,8 @@ import 'Detail_Home_Screen/Banner_Screen.dart';
 import 'Detail_Home_Screen/Category_Screen.dart';
 import 'Detail_Home_Screen/Detail_Food_Screen.dart';
 import 'Search_Screen/Search_Screen_T1.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 class HomeScreenT1 extends StatefulWidget {
   HomeScreenT1({Key key}) : super(key: key);
@@ -16,6 +18,17 @@ class HomeScreenT1 extends StatefulWidget {
 }
 
 class _HomeScreenT1State extends State<HomeScreenT1> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  User user;
+
+  @override
+  void InitState(){
+    super.initState();
+    initUser();
+  }
+  initUser()async{
+    user = await _auth.currentUser;
+  }
   @override
   List<String> _image = [
     "assets/Template1/banner/1.jpg",
@@ -63,7 +76,7 @@ class _HomeScreenT1State extends State<HomeScreenT1> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Text(
-              "Hello siddhant",
+              '${u',
               style: TextStyle(
                   fontFamily: "Sofia",
                   fontWeight: FontWeight.w800,

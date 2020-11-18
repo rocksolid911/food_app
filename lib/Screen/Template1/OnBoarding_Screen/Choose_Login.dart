@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:food_template/Screen/Template1/B1_Home_Screen/B1_Home_Screen_T1.dart';
 import 'package:food_template/Screen/Template1/Login_Screen/SignIn_Screen.dart';
 import '.././../../services/signin_services.dart';
 class chooseLogin extends StatefulWidget {
@@ -343,7 +345,7 @@ class _AnimationSplashLoginState extends State<AnimationSplashLogin> {
        var user = await signInWithGoogle();
        if(user!=null){
          Navigator.of(context).pushReplacement(MaterialPageRoute(
-             builder: (BuildContext context) => new signinTemplate1()));
+             builder: (BuildContext context) => HomeScreenT1()));
          //hello
        }
 
